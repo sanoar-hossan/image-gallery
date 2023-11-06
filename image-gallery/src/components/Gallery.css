@@ -1,25 +1,35 @@
 .image-gallery {
-    display: flex;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+  justify-items: center; /* Center items horizontally */
+}
+.image.is-dragging {
+  opacity: 0.7; /* Reduced opacity for the dragged image */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a shadow to indicate drag */
+}
+.image {
+  border: 1px solid #ddd;
+  padding: 10px;
+  transition: transform 0.3s;
+  width: 200px; /* Set a fixed width for the images */
+  height: 200px; /* Set a fixed height for the images */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  box-sizing: border-box;
+}
+
+.featured {
+  transform: scale(1.1); /* Adjust the scale as needed */
+}
+
+.controls,
+.feature-controls {
+  text-align: center;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* 1 column per row on mobile */
   }
-  
-  .image {
-    margin: 10px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    display: inline-block;
-    transition: transform 0.3s;
-  }
-  
-  .featured {
-    transform: scale(1.2);
-  }
-  
-  .controls {
-    text-align: center;
-  }
-  
-  .feature-controls {
-    text-align: center;
-  }
-  
+}
