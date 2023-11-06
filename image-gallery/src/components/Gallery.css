@@ -1,0 +1,25 @@
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .image {
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  
+  .featured {
+    transform: scale(1.2);
+  }
+  
+  .controls {
+    text-align: center;
+  }
+  
+  .feature-controls {
+    text-align: center;
+  }
+  
